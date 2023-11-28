@@ -33,11 +33,6 @@
         <input type="text" placeholder="Digite um curso..." name="search">
         <button type="submit" onclick="search()">Pesquisar</button>
     </form>
-    <!--
-    <h1>ALUNOS</h1>
-    <button class="botao">Inserir novo card</button>
-    -->
-    <!-- Cards dos alunos -->
     <div id="container-cards">
 
         @foreach ($alunos as $aluno)
@@ -63,11 +58,6 @@
                     </form>
                 @endif
             </div>
-            <!--
-            <div class="botoes_card">
-                <button class="botao_contratar">CONTRATAR</button>
-                <button class="botao_contratar">DESCRIÇÃO</button>
-            -->
         </div>
     </div>
     @endforeach
