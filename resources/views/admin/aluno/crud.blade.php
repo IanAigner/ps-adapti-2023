@@ -37,9 +37,8 @@
                                         </div>
                                     </div>
                                 @endif
-                                @component('admin.aluno.formulario', ['aluno' => isset($aluno) ?? null,
-                                    'cursos' => $cursos])
-                                @endcomponent
+                                    @component('admin.aluno.formulario', ['aluno' => $aluno ?? null, 'cursos' => $cursos])
+                                    @endcomponent
                             </div>
                             <div class="card-footer ml-auto mr-auto">
                                 <button type="submit" class="btn btn-success">{{ __('Save') }}</button>

@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,8 @@ use App\Http\Controllers\AlunoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get("search", [SiteController::class,"search"])->name("search");
+Route::post('/contratar/{aluno}', [AlunoController::class, 'contratar'])->name('aluno.contratar');
 Route::middleware('locale')->group(function () {
 
     Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
@@ -43,6 +45,7 @@ Route::middleware('locale')->group(function () {
         Route::resource('user', UserController::class, ['except' => ['show']]);
         Route::resource('curso', CursoController::class, ['except' => ['show']]);
         Route::resource('aluno', AlunoController::class);
+        Route::resource('type', TypeController::class);
 
 
         //Rotas para perfil do usuário
